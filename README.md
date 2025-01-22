@@ -1,7 +1,5 @@
 # zkVerify Demo User Guide
 
-This guide will help you understand how to implement the complete flow from dapp to relayer and then to the contract in the zkVerify Demo.
-
 ## Table of Contents
 
 1. [Prerequisites](#prerequisites)
@@ -17,7 +15,7 @@ Before you begin, ensure that you have installed all necessary dependencies and 
 The main flow of the zkVerify Demo is as follows:
 
 0. **Register circuits and get the VKHash for each circuit**  
-   Before starting, you need to register circuits and obtain the verification key hash (VKHash) for each circuit.
+   Before starting, you need to register circuits and obtain the VKHash for each circuit.
 
 1. **Dapp generates proof**  
    In the dapp, generate the required zero-knowledge proof.
@@ -26,7 +24,8 @@ The main flow of the zkVerify Demo is as follows:
    Submit the generated proof, verifyInputs, and VKHash to the relayer.
 
 3. **Relayer submits proof data to zkVerify testnet**  
-   The relayer submits the proof data to the zkVerify testnet and returns the AttestationDetails to the dapp.
+   The relayer submits the proof data to the zkVerify testnet and returns the AttestationDetails to the dapp. 
+   Additionally, the relayer uses a wallet on the zkVerify testnet to pay the gas fee for proof submittion.
 
 4. **Proof is bridged from zkVerify testnet to Sepolia**  
    The proof is bridged from the zkVerify testnet to the Sepolia network.
@@ -41,19 +40,19 @@ The main flow of the zkVerify Demo is as follows:
 
 ### Dapp Code Reference
 
-#### [`dapp/src/services/darkpool/depositService.ts`](../dapp/src/services/darkpool/depositService.ts)
+#### [`dapp/src/services/darkpool/depositService.ts`](../main/dapp/src/services/darkpool/depositService.ts)
 
 This file contains the logic for generating and submitting proofs in the dapp.
 
 ### Relayer Code Reference
 
-#### [`relayer/src/worker/zkVerifyWorker.js`](../relayer/src/worker/zkVerifyWorker.js)
+#### [`relayer/src/worker/zkVerifyWorker.js`](../main/relayer/src/worker/zkVerifyWorker.js)
 
 This file contains the logic for the relayer to receive proofs and submit them to the zkVerify testnet.
 
 ### Contracts Code Reference
 
-#### [`contracts/contracts/core/DarkpoolAssetManger.sol`](../contracts/contracts/core/DarkpoolAssetManger.sol)
+#### [`contracts/contracts/core/DarkpoolAssetManger.sol`](../main/contracts/contracts/core/DarkpoolAssetManger.sol)
 
 This file contains the logic for the contract to call ZKHub to verify the proof on Sepolia.
 
