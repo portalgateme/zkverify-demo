@@ -1,0 +1,31 @@
+{
+  "name": "darkpool-v1-zk-contracts-zkverify",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "runtest": "ts-node test/testZkVerify.ts",
+    "register-vk": "ts-node scripts/register_vk.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "@types/circomlibjs": "^0.1.6",
+    "hardhat": "^2.22.15",
+    "ts-node": "^10.9.2"
+  },
+  "dependencies": {
+    "@aztec/bb.js": "^0.61.0",
+    "@noir-lang/noir_js": "^0.38.0",
+    "@openzeppelin/contracts": "^5.1.0",
+    "circomlibjs": "^0.1.7",
+    "crypto": "^1.0.1",
+    "dotenv": "^16.4.5",
+    "ethers": "^6.13.4",
+    "hardhat-tracer": "^3.1.0",
+    "zkverifyjs": "^0.3.0"
+  },
+  "packageManager": "yarn@1.22.21+sha1.1959a18351b811cdeedbd484a8f86c3cc3bbaf72"
+}

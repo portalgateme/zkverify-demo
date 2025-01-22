@@ -1,0 +1,16 @@
+{
+  "zkModule": {
+    "zkVerifyAttestation": "0x209f82A06172a8d96CF2c95aD8c42316E80695c1",
+    "initialOwner": "0x0000000000000000000000000000000000000001"
+  },
+  "localDeploymentModule": {
+    "identityIssuer": "0x0000000000000000000000000000000000000002",
+    "initialOwner": "0x0000000000000000000000000000000000000001"
+  },
+  "auxModule": {
+    "initialOwner": "0x0000000000000000000000000000000000000001"
+  },
+  "poolsModule": {
+    "initialOwner": "0x0000000000000000000000000000000000000001"
+  }
+}
